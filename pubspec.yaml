@@ -1,0 +1,42 @@
+name: flutter_note_app
+description: A new Flutter project.
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.3
+  sqflite: any
+  path_provider: any
+  intl: ^0.16.1
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Itim
+      fonts:
+        - asset: assets/fonts/Itim-Regular.ttf
+    - family: RedHat
+      fonts:
+        - asset: assets/fonts/RedHatText-Regular.ttf
+        - asset: assets/fonts/RedHatText-Bold.ttf
+          weight: 700
+    - family: Caveat
+      fonts:
+        - asset: assets/fonts/Caveat-Regular.ttf
+        - asset: assets/fonts/Caveat-Bold.ttf
+          weight: 700
+    - family: Amaranth
+      fonts:
+        - asset: assets/fonts/Amaranth-Regular.ttf

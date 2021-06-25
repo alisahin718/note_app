@@ -3,6 +3,7 @@ import 'package:flutter_note_app/models/note.dart';
 import 'package:flutter_note_app/screens/edit_note.dart';
 import 'package:flutter_note_app/screens/view_note.dart';
 import 'package:flutter_note_app/utils/database_helper.dart';
+import 'package:flutter_note_app/service/auth_service.dart';
 import 'package:sqflite/sqflite.dart';
 
 class NoteList extends StatefulWidget {
@@ -15,7 +16,7 @@ class _NoteListState extends State<NoteList> {
   List<Note> noteList;
   int _count = 0;
   DatabaseHelper _helper = DatabaseHelper();
-
+  AuthService _authService = AuthService();
   @override
   Widget build(BuildContext context) {
     if (noteList == null) {
@@ -24,6 +25,10 @@ class _NoteListState extends State<NoteList> {
     }
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        actions: [IconButton(onPressed:  (){ _authService.signOut();
+        Navigator.pop(context);}, icon: Icon(Icons.cancel_outlined))],
+        automaticallyImplyLeading: false,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         title: Center(child: Text('Not Defteri',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),)),
       ),
